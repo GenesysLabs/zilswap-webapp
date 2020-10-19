@@ -95,6 +95,7 @@ const Notifications: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: an
             {layoutState.notification!.message}
           </Typography>
         </NotificationBox>
+
       )}
       {!!observingTxs.length && (
         <NotificationBox IconComponent={LoadingIcon}>

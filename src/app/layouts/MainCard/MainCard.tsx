@@ -127,10 +127,18 @@ const MainCard: React.FC<PaperProps> = (props: any) => {
             disableElevation
             color="primary"
             variant="contained"
-            className={cls(classes.tab, classes.tabCornerRight)}
+            className={cls(classes.tab,)}
             activeClassName={cls(classes.tabActive, { [classes.tabNoticeOpposite]: hasNotification })}
             component={CustomRouterLink}
             to="/pool">Pool</Button>
+            <Button
+              disableElevation
+              color="primary"
+              variant="contained"
+              className={cls(classes.tab, classes.tabCornerRight)}
+              activeClassName={cls(classes.tabActive, { [classes.tabNoticeOpposite]: hasNotification })}
+              component={CustomRouterLink}
+              to="/wallet">Wallet</Button>
         </Box>
         <Box>{children}</Box>
       </Paper>

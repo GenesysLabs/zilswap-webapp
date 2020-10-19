@@ -5,6 +5,9 @@ const navigationConfig: NavigationOptions[] = [{
     title: "Swap",
     href: "/swap",
   }, {
+    title: "Pool",
+    href: "/pool",
+  }, {
     title: "About",
     href: "https://docs.zilswap.org/#/?id=introduction",
     external: true,

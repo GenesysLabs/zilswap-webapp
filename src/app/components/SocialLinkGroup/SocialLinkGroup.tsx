@@ -2,7 +2,7 @@ import { Box, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import { ReactComponent as MediumIcon } from "./social-icons/medium.svg";
+//import { ReactComponent as MediumIcon } from "./social-icons/medium.svg";
 import { ReactComponent as MailIcon } from "./social-icons/mail.svg";
 import { ReactComponent as Discord } from "./social-icons/discord.svg";
 import { ReactComponent as TwitterIcon } from "./social-icons/twitter.svg";
@@ -36,16 +36,13 @@ const SocialLinkGroup: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: 
   const classes = useStyles();
   return (
     <Box {...rest} className={cls(classes.root, className)}>
-      <Button href="https://discord.com/invite/Cpsxb2d">
+      <Button href="https://discord.gg/vT4jmhr">
         <Discord />
       </Button>
       <Button href="https://twitter.com/contact_carbon">
         <TwitterIcon />
       </Button>
-      <Button href="https://medium.com/Switcheo">
-        <MediumIcon />
-      </Button>
-      <Button href="https://support@switcheo.network">
+      <Button href="mailto:contact@carbontoken.info">
         <MailIcon />
       </Button>
     </Box>

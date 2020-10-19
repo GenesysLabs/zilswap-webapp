@@ -1,12 +1,13 @@
-# Zilswap Webapp
+# CARBON Swap
 
-This repository contains the UI code for the Zilswap dApp.
+This repository contains the UI code for the CARBON Swap dApp.
 
-The webapp is hosted on canonical url: [https://zilswap.io](https://zilswap.io). IFPS hosting is coming soon.
+Hosted on canonical url: [https://swap.carbontoken.info](https://zilswap.io).
 
 ## Development
 
-The Zilswap webapp is built using React. Simply install Node.js and node package dependencies to begin.
+The CARBON Swap dApp was initially forked from zilswap (developed by Switcheo)
+Built using React. Simply install Node.js and node package dependencies to begin.
 
 ```bash
 yarn install
@@ -14,7 +15,3 @@ yarn start
 ```
 
 The webapp will be running on [http://localhost:3000](http://localhost:3000) by default
-
-## Contributing
-
-View our [contribution guidelines](./CONTRIBUTING.md) before making a pull request.

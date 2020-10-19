@@ -18,6 +18,10 @@ const routes: RouteConfig[] = [{
     exact: true,
     component: lazy(() => import('./views/main/Pool'))
   }, {
+    path: '/wallet',
+    exact: true,
+    component: lazy(() => import('./views/main/Wallet'))
+  }, {
     component: () => <Redirect to="/swap"></Redirect>
   }]
 }];

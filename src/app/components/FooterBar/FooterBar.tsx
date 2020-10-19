@@ -60,7 +60,7 @@ const FooterBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =
     <Box {...rest} className={cls(classes.root, className)} elevation={1}>
       <SocialLinkGroup className={classes.socialLinks} />
       <Box className={classes.switcheoBrand}>
-        <Typography variant="body1">By</Typography>
+        <Typography variant="body1">CARBON Swap was originally cloned from Zilswap By</Typography>
         <IconButton href="https://switcheo.network">
           <SwitcheoIcon />
         </IconButton>
