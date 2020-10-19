@@ -6,10 +6,11 @@ export const ActionTypes = {
   SHOW_POOL_TYPE: "SHOW_POOL_TYPE",
   TOGGLE_SHOW_CREATE_POOL: "TOGGLE_SHOW_CREATE_POOL",
   HIDE_LIQUIDITY_EARN: "HIDE_LIQUIDITY_EARN",
+  HIDE_WALLET_MESSAGE: "HIDE_WALLET_MESSAGE",
   UPDATE_NOTIFICATION: "UPDATE_NOTIFICATION",
 
   UPDATE_NETWORK: "UPDATE_NETWORK",
-  
+
   ADD_BACKGROUND_LOADING: "ADD_BACKGROUND_LOADING",
   REMOVE_BACKGROUND_LOADING: "REMOVE_BACKGROUND_LOADING",
 };
@@ -36,6 +37,13 @@ export function showPoolType(poolType?: PoolType) {
 export function hideLiquidityEarn(hide: boolean = true) {
   return {
     type: ActionTypes.HIDE_LIQUIDITY_EARN,
+    hide,
+  }
+};
+
+export function hideWalletMessage(hide: boolean = true) {
+  return {
+    type: ActionTypes.HIDE_WALLET_MESSAGE,
     hide,
   }
 };

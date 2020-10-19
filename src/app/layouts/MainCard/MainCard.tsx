@@ -84,14 +84,20 @@ const MainCard: React.FC<PaperProps> = (props: any) => {
   const classes = useStyles();
   const isPool = useRouteMatch("/pool");
   const isSwap = useRouteMatch("/swap");
+  const isWallet = useRouteMatch("/wallet");
   const layoutState = useSelector<RootState, LayoutState>(state => state.layout);
   const swapState = useSelector<RootState, SwapFormState>(state => state.swap);
   const poolToken = useSelector<RootState, TokenInfo | null>(state => state.pool.token);
   const transactionState = useSelector<RootState, TransactionState>(state => state.transaction);
 
   const hasNotification =
+
+
     // show new pool warning
     ((isPool && poolToken && !poolToken?.loading && !poolToken?.pool) ||
+
+      // show wallet information
+      (isWallet && !layoutState.walletInfoHidden) ||
 
       // show liquidity fee (add liquidity incentive) message
       (isPool && !layoutState.liquidityEarnHidden && layoutState.showPoolType === "add") ||

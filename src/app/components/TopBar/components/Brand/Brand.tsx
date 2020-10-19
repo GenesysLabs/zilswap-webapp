@@ -4,7 +4,8 @@ import { RootState } from "app/store/types";
 import cls from "classnames";
 import React from "react";
 import { useSelector } from "react-redux";
-import { ReactComponent as BrandSVG } from "./brand.svg";
+//import { ReactComponent as BrandSVG } from "./brand.svg";
+import { ReactComponent as BrandSVG } from "./diamond.svg";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "row",
     justifyContent: "center",
     '& svg': {
-      height: 36,
+      height: 48,
       '& .st0': {
         fill: '#169BA3!important',
       }

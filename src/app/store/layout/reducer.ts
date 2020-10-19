@@ -12,6 +12,7 @@ const initial_state: LayoutState = {
   showWalletDialog: false,
   showCreatePool: false,
   liquidityEarnHidden: false,
+  walletInfoHidden: false,
   notification: undefined,
   network: storedNetwork,
   showPoolType: "add",
@@ -42,6 +43,12 @@ const reducer = (state: LayoutState = initial_state, actions: any) => {
       return {
         ...state,
         liquidityEarnHidden: actions.hide === undefined ? true : actions.hide,
+      };
+
+    case ActionTypes.HIDE_WALLET_MESSAGE:
+      return {
+        ...state,
+        walletInfoHidden: actions.hide === undefined ? true : actions.hide,
       };
 
     case ActionTypes.UPDATE_NETWORK:
