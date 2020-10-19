@@ -39,7 +39,7 @@ const SocialLinkGroup: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: 
       <Button href="https://discord.com/invite/Cpsxb2d">
         <Discord />
       </Button>
-      <Button href="https://twitter.com/SwitcheoNetwork">
+      <Button href="https://twitter.com/contact_carbon">
         <TwitterIcon />
       </Button>
       <Button href="https://medium.com/Switcheo">

@@ -1,6 +1,7 @@
-import { Box, Button, CircularProgress, DialogContent, DialogProps, InputAdornment, makeStyles, OutlinedInput, Typography } from "@material-ui/core";
-import ArrayOpenedIcon from "@material-ui/icons/ArrowDropDown";
-import ArrayClosedIcon from "@material-ui/icons/ArrowRight";
+//import { Box, Button, CircularProgress, DialogContent, DialogProps, InputAdornment, makeStyles, OutlinedInput, Typography } from "@material-ui/core";
+import { Box, CircularProgress, DialogContent, DialogProps, InputAdornment, makeStyles, OutlinedInput, Typography } from "@material-ui/core";
+//import ArrayOpenedIcon from "@material-ui/icons/ArrowDropDown";
+//import ArrayClosedIcon from "@material-ui/icons/ArrowRight";
 import { DialogModal } from "app/components";
 import { RootState, TokenInfo, TokenState, WalletState } from "app/store/types";
 import { useTaskSubscriber } from "app/utils";
@@ -77,7 +78,8 @@ const CurrencyDialog: React.FC<CurrencyDialogProps> = (props: CurrencyDialogProp
   const classes = useStyles();
   const [tokens, setTokens] = useState<TokenInfo[]>([]);
   const [search, setSearch] = useState("");
-  const [formState, setFormState] = useState<FormState>({ ...initialFormState });
+  //const [formState, setFormState] = useState<FormState>({ ...initialFormState });
+  const [formState] = useState<FormState>({ ...initialFormState });
   const tokenState = useSelector<RootState, TokenState>(state => state.token);
   const walletState = useSelector<RootState, WalletState>(state => state.wallet);
   const [loadingConnectWallet] = useTaskSubscriber(...LoadingKeys.connectWallet);
@@ -92,13 +94,6 @@ const CurrencyDialog: React.FC<CurrencyDialogProps> = (props: CurrencyDialogProp
 
     setTokens(tokens.sort(sortTokens));
   }, [tokenState.tokens]);
-
-  const onToggleFormState = (key: keyof FormState) => {
-    setFormState({
-      ...formState,
-      [key]: !formState[key],
-    })
-  };
 
   const filterSearch = (token: TokenInfo, whitelisted?: boolean): boolean => {
     const searchTerm = search.toLowerCase().trim();
@@ -135,7 +130,7 @@ const CurrencyDialog: React.FC<CurrencyDialogProps> = (props: CurrencyDialogProp
   };
 
   const verifiedTokens = tokens.filter(getTokenFilter("whitelisted")).sort(sortResult);
-  const unverifiedTokens = tokens.filter(getTokenFilter("unverified")).sort(sortResult);
+  //const unverifiedTokens = tokens.filter(getTokenFilter("unverified")).sort(sortResult);
   return (
     <DialogModal header="Select a Token" {...rest} className={clsx(classes.root, className)}>
       <DialogContent>
@@ -168,33 +163,15 @@ const CurrencyDialog: React.FC<CurrencyDialogProps> = (props: CurrencyDialogProp
 
         {tokenState.initialized && (
           <Box className={classes.currenciesContainer}>
-            <Button color="inherit" component="h3" variant="text"
-              className={classes.currenciesHeader}
-              onClick={() => onToggleFormState("showWhitelisted")}>
-              Registered tokens
-              {formState.showWhitelisted ? <ArrayOpenedIcon /> : <ArrayClosedIcon />}
-            </Button>
+
             <CurrencyList
               tokens={verifiedTokens}
               search={search}
-              emptyStateLabel={`No verified tokens found for "${search}"`}
+              emptyStateLabel={`No approved tokens found for "${search}"`}
               showContribution={showContribution}
               onSelectCurrency={onSelectCurrency}
               className={clsx(classes.currencies, { [classes.currenciesHidden]: !formState.showWhitelisted })} />
 
-            <Button color="inherit" component="h3" variant="text"
-              className={classes.currenciesHeader}
-              onClick={() => onToggleFormState("showOthers")}>
-              Others
-              {formState.showOthers ? <ArrayOpenedIcon /> : <ArrayClosedIcon />}
-            </Button>
-            <CurrencyList
-              tokens={unverifiedTokens}
-              search={search}
-              emptyStateLabel={`No other tokens found for "${search}"`}
-              showContribution={showContribution}
-              onSelectCurrency={onSelectCurrency}
-              className={clsx(classes.currencies, { [classes.currenciesHidden]: !formState.showOthers })} />
           </Box>
         )}
       </DialogContent>
