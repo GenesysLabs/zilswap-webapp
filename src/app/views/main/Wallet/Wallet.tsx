@@ -6,7 +6,7 @@ import cls from "classnames";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import WalletMessage from "./components/WalletMessage";
-import CurrencyList from "app/components/CurrencyDialog/components/CurrencyList";
+import CurrencyList from "./components/CurrencyList";
 import { RootState, TokenInfo, TokenState, WalletState } from "app/store/types";
 import { BIG_ZERO, LoadingKeys, sortTokens } from "app/utils/contants";
 import BigNumber from "bignumber.js";
@@ -128,7 +128,7 @@ const WalletView: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) 
           tokens={verifiedTokens}
           search={search}
           emptyStateLabel={`No approved tokens found for "${search}"`}
-          showContribution={showContribution}
+          showContribution={true}
           onSelectCurrency={onSelectCurrency}
           className={clsx(classes.currencies, { [classes.currenciesHidden]: !formState.showWhitelisted })} />
         </Box>
