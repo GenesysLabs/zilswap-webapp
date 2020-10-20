@@ -1,4 +1,4 @@
-import { Box } from "@material-ui/core";
+import { Box} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Notifications } from "app/components";
 import MainCard from "app/layouts/MainCard";
@@ -36,6 +36,7 @@ const WalletView: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) 
         <Box display="flex" justifyContent="space-between" mb="28px" className={classes.container}>
 
         </Box>
+
       </Box>
     </MainCard>
   );
