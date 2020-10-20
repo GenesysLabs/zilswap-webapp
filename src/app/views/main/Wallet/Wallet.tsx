@@ -8,7 +8,8 @@ import { useSelector } from "react-redux";
 import WalletMessage from "./components/WalletMessage";
 import CurrencyList from "./components/CurrencyList";
 import { RootState, TokenInfo, TokenState, WalletState } from "app/store/types";
-import { BIG_ZERO, LoadingKeys, sortTokens } from "app/utils/contants";
+//import { BIG_ZERO, LoadingKeys, sortTokens } from "app/utils/contants";
+import { BIG_ZERO, sortTokens } from "app/utils/contants";
 import BigNumber from "bignumber.js";
 import clsx from "clsx";
 
@@ -63,7 +64,8 @@ const WalletView: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) 
   const { children, className, onSelectCurrency, hideZil, hideNoPool, showContribution, ...rest } = props;
   const classes = useStyles();
   const [tokens, setTokens] = useState<TokenInfo[]>([]);
-  const [search, setSearch] = useState("");
+  //const [search, setSearch] = useState("");
+  const [search] = useState("");
 
   const walletState = useSelector<RootState, WalletState>(state => state.wallet);
   const [formState] = useState<FormState>({ ...initialFormState });
