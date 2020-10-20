@@ -7,7 +7,7 @@ import { NavLink as RouterLink } from "react-router-dom";
 import SocialLinkGroup from "../SocialLinkGroup";
 import ThemeSwitch from "../ThemeSwitch";
 import { ReactComponent as CloseSVG } from "./close.svg";
-import { ReactComponent as LogoSVG } from "./logo.svg";
+import { ReactComponent as LogoSVG } from "./diamond.svg";
 import navigationConfig from "./navigationConfig";
 
 const CustomRouterLink = forwardRef((props: any, ref: any) => (
@@ -18,6 +18,21 @@ const CustomRouterLink = forwardRef((props: any, ref: any) => (
 
 const useStyles = makeStyles((theme: AppTheme) => ({
   root: {
+    position: "relative",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    '& svg': {
+      height: 48,
+      '& .st0': {
+        fill: '#169BA3!important',
+      }
+    },
+  },
+  darkMode: {
+    '& svg .st0': {
+      fill: '#29CCC4!important',
+    }
   },
   paper: {
     display: "flex",
@@ -47,6 +62,7 @@ const useStyles = makeStyles((theme: AppTheme) => ({
       '& svg': {
         height: theme.spacing(2),
         width: theme.spacing(2),
+        fill: '#29CCC4!important',
       }
     }
   },
