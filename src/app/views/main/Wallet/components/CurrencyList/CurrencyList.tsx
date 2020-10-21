@@ -80,8 +80,9 @@ const CurrencyList: React.FC<CurrencyListProps> = (props) => {
           {emptyStateLabel || `No tokens found for "${search}"`}
         </Typography>
       )}
-      {tokens.map((token, index) => (
-        <ButtonBase
+      {tokens.map((token, index) => {
+
+        return getTokenBalance(token) !== BIG_ZERO && (<ButtonBase
           className={classes.buttonBase}
           key={index}
           focusRipple
@@ -113,8 +114,8 @@ const CurrencyList: React.FC<CurrencyListProps> = (props) => {
               )}
             </Box>
           </ContrastBox>
-        </ButtonBase>
-      ))}
+        </ButtonBase>)
+      })}
     </Box>
   );
 };
